@@ -8,14 +8,17 @@ import '../styles/PhotoListItem.scss';
 //hide userName
 
 const PhotoListItem = (props) => {
-  return (
-    <div className = "photo-list-item">
-      <div className = "photo-header">
-        <h2>{ props.username }</h2>
-        <img src={ props.imageSource }></img>
+  const photos = ['one', 'two', 'three']
+  return photos.map(photo => {
+    return (
+      <div className = "photo-list--item" key={photo}>
+        <div className = "photo-header">
+          {/* <h2 className= " photo-list--user-profile ">{ props.username }</h2> */}
+          <img className = "photo-list--image" src={ props.imageSource }></img>
+        </div>
       </div>
-    </div>
-  )
+    )
+  })
 }
 
 PhotoListItem.defaultProps = {
