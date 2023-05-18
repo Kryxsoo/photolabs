@@ -1,6 +1,8 @@
 
 import React from 'react';
+import { useState } from 'react';
 import '../styles/PhotoListItem.scss';
+import PhotoFavButton from './PhotoFavButton';
 
 //userName string
 //imageSource url
@@ -9,11 +11,15 @@ import '../styles/PhotoListItem.scss';
 
 const PhotoListItem = (props) => {
   const photos = ['one', 'two', 'three']
+  const [isFavorite, setIsFavorite] = useState (false)
+
+
   return photos.map(photo => {
+
     return (
       <div className = "photo-list--item" key={photo}>
         <div className = "photo-header">
-          {/* <h2 className= " photo-list--user-profile ">{ props.username }</h2> */}
+        <PhotoFavButton isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
           <img className = "photo-list--image" src={ props.imageSource }></img>
         </div>
       </div>
