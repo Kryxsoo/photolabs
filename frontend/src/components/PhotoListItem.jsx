@@ -10,21 +10,17 @@ import PhotoFavButton from './PhotoFavButton';
 //hide userName
 
 const PhotoListItem = (props) => {
-  const photos = ['one', 'two', 'three']
   const [isFavorite, setIsFavorite] = useState (false)
 
 
-  return photos.map(photo => {
-
     return (
-      <div className = "photo-list--item" key={photo}>
+      <div className = "photo-list--item">
         <div className = "photo-header">
         <PhotoFavButton isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
-          <img className = "photo-list--image" src={ props.imageSource }></img>
+          <img className = "photo-list--image" src={ props.imageSource } />
         </div>
       </div>
     )
-  })
 }
 
 PhotoListItem.defaultProps = {
