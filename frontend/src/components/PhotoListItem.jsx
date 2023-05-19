@@ -1,17 +1,13 @@
-
 import React from 'react';
-import { useState } from 'react';
 import '../styles/PhotoListItem.scss';
 import PhotoFavButton from './PhotoFavButton';
 
-//userName string
-//imageSource url
-//id id
-//hide userName
-
 const PhotoListItem = (props) => {
-  const [isFavorite, setIsFavorite] = useState (false)
-
+  const isFavorite = props.favorites[props.id]
+  const setIsFavorite = () => {
+    props.toggleFavorite(props.id)
+  }
+// console.log("check: ", props.favorites)
     return (
       <div className = "photo-list--item">
         <div className = "photo-header">

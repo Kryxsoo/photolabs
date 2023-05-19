@@ -1,12 +1,15 @@
 import React from 'react';
-
 import '../styles/PhotoList.scss';
 import PhotoListItem from './PhotoListItem';
+
 
 const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo) => {
     return  <PhotoListItem
-    key={ photo.id }
+    id={ photo.id }
+    toggleFavorite = { props.toggleFavorite }
+    favorites = { props.favorites }
+    key= { photo.id }
     username={ photo.user.name }
     imageSource={ photo.urls.regular }
     />
