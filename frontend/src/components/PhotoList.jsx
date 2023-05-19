@@ -4,15 +4,13 @@ import '../styles/PhotoList.scss';
 import PhotoListItem from './PhotoListItem';
 
 const PhotoList = (props) => {
-
   const mappedPhotos = props.photos.map((photo) => {
     return  <PhotoListItem
-    key={photo.id}
-    username={ photo.username }
-    imageSource={ photo.imageSource }
+    key={ photo.id }
+    username={ photo.user.name }
+    imageSource={ photo.urls.regular }
     />
   })
-
     return (
         <div className="photo-list">
         { mappedPhotos }

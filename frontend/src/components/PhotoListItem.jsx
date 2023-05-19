@@ -12,7 +12,6 @@ import PhotoFavButton from './PhotoFavButton';
 const PhotoListItem = (props) => {
   const [isFavorite, setIsFavorite] = useState (false)
 
-
     return (
       <div className = "photo-list--item">
         <div className = "photo-header">
