@@ -12,6 +12,8 @@ const PhotoList = (props) => {
     key= { photo.id }
     username={ photo.user.name }
     imageSource={ photo.urls.regular }
+    handleFavoriteClick={ props.handleFavoriteClick}
+    setShowModal={ props.setShowModal }
     />
   })
     return (

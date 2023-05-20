@@ -7,11 +7,16 @@ const PhotoListItem = (props) => {
   const setIsFavorite = () => {
     props.toggleFavorite(props.id)
   }
+
+  const showModal = () => {
+    props.setShowModal(true)
+  }
+
 // console.log("check: ", props.favorites)
     return (
-      <div className = "photo-list--item">
+      <div className = "photo-list--item" onClick={showModal}>
         <div className = "photo-header">
-        <PhotoFavButton isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
+        <PhotoFavButton isFavorite={isFavorite} setIsFavorite={setIsFavorite} handleFavoriteClick={props.handleFavoriteClick} />
           <img className = "photo-list--image" src={ props.imageSource } />
         </div>
       </div>

@@ -2,8 +2,13 @@ import React from 'react';
 
 import '../styles/PhotoDetailsModal.scss'
 
-export const PhotoDetailsModal = () => (
-  <div className='photo-details-modal'>
+export const PhotoDetailsModal = (props) => {
+
+  // const [ showModal, setShowModal] = useState(false)
+
+  return (
+    <>
+    {props.showModal && (<div className='photo-details-modal'>
     <button className='photo-details-modal--close-button'>
       <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_428_287)">
@@ -17,7 +22,9 @@ export const PhotoDetailsModal = () => (
         </defs>
       </svg>
     </button>
-  </div>
-)
+  </div>)}
+  </>
+  )
+}
 
 export default PhotoDetailsModal;
