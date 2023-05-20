@@ -9,11 +9,11 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal';
 const App = () => {
 
   const [ showModal, setShowModal ] = useState(false)
-
+console.log("show model", showModal);
 return (
   <div className="App">
     <HomeRoute setShowModal={setShowModal}/>
-    <PhotoDetailsModal showModal={showModal}/>
+   {showModal && <PhotoDetailsModal setShowModal={setShowModal}/>}
   </div>
 )
 }

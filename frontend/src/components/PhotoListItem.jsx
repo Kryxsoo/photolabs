@@ -10,6 +10,7 @@ const PhotoListItem = (props) => {
 
   const showModal = () => {
     props.setShowModal(true)
+    console.log("Ive been called")
   }
 
 // console.log("check: ", props.favorites)
