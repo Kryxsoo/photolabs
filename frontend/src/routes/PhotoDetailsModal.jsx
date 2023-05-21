@@ -8,8 +8,9 @@ export const PhotoDetailsModal = (props) => {
 
   const showModal = () => {
     props.setShowModal(false)
-    console.log("Ive been called")
   }
+
+
 
   return (
     
@@ -28,6 +29,9 @@ export const PhotoDetailsModal = (props) => {
         </defs>
       </svg>
     </button>
+    <div>
+      <h1>hello</h1>
+    </div>
   </div>)}
   </>
   )
