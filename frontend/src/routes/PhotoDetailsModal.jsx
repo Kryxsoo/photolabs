@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/PhotoDetailsModal.scss'
+import '../styles/PhotoDetailsModal.scss'  
 
 export const PhotoDetailsModal = (props) => {
 
@@ -10,7 +10,7 @@ export const PhotoDetailsModal = (props) => {
     props.setShowModal(false)
   }
 
-
+console.log("This is the photolist: ", props.photos);
 
   return (
     
@@ -29,9 +29,6 @@ export const PhotoDetailsModal = (props) => {
         </defs>
       </svg>
     </button>
-    <div>
-      <h1>hello</h1>
-    </div>
   </div>)}
   </>
   )

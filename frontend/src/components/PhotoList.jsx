@@ -10,7 +10,7 @@ const PhotoList = (props) => {
     toggleFavorite = { props.toggleFavorite }
     favorites = { props.favorites }
     key= { photo.id }
-    username={ photo.user.name }
+    username={ photo.username }
     imageSource={ photo.urls.regular }
     handleFavoriteClick={ props.handleFavoriteClick}
     setShowModal={ props.setShowModal }

@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 import topics from '../mocks/topics.json'
-import photos from "../mocks/photos.json"
+
 
 // Note: Rendering a single component to build components in isolation
 const HomeRoute = (props) => {
@@ -38,7 +38,7 @@ const toggleFavorite = (id) => {
   return (
   <>
     <TopNavigationBar topics={topics} topFavorite={topFavorite}/>
-    <PhotoList photos={photos} toggleFavorite={toggleFavorite} favorites={favorites} handleFavoriteClick={handleFavoriteClick} setShowModal={props.setShowModal}/>
+    <PhotoList photos={props.photos} toggleFavorite={toggleFavorite} favorites={favorites} handleFavoriteClick={handleFavoriteClick} setShowModal={props.setShowModal}/>
   </>
 )}
 
