@@ -5,9 +5,18 @@ import './App.scss';
 import HomeRoute from './routes/HomeRoute.jsx';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import photos from "./mocks/photos.json"
+import useApplicationData from './hooks/useApplicationData';
+ 
+
 
 // Note: Rendering a single component to build components in isolation
-const App = () => {
+const App = () => {  
+    const {
+      state, 
+      dispatch,
+      photoInfo,
+      photoDetail
+    } = useApplicationData();
 
   const [favorites, setFavorites] = useState({})
 

@@ -37,16 +37,16 @@ console.log("This is the photolist: ", props.photos);
     toggleFavorite = { props.toggleFavorite }
     favorites = { props.favorites }
     key= { props.photos[0].id }
+    profile={props.photos[0].urls.thumb}
     username={ props.photos[0].username }
     imageSource={ props.photos[0].urls.full }
     handleFavoriteClick={ props.handleFavoriteClick}
-    setShowModal={ props.setShowModal }/>
-    
+    setShowModal={ props.setShowModal } />
+    <hr/>
     </div>
-    <div className='photo-details-modal--header'>Similiar Photos
-      <PhotoList className ='photo-details-modal--images' photos={props.photos} toggleFavorite={props.toggleFavorite} favorites={props.favorites} handleFavoriteClick={props.handleFavoriteClick} setShowModal={props.setShowModal}/>
 
-    </div>
+    <div className='photo-details-modal--header'>Similiar Photos</div>
+      <PhotoList className ='photo-details-modal--images' photos={props.photos} toggleFavorite={props.toggleFavorite} favorites={props.favorites} handleFavoriteClick={props.handleFavoriteClick} setShowModal={props.setShowModal}/>
   </div>)}
   </>
   )
