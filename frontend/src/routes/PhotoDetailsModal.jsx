@@ -1,6 +1,9 @@
 import React from 'react';
+import PhotoList from '../components/PhotoList';
+import PhotoListItem from '../components/PhotoListItem';
 
-import '../styles/PhotoDetailsModal.scss'  
+import '../styles/PhotoDetailsModal.scss'
+import '../styles/PhotoListItem.scss'
 
 export const PhotoDetailsModal = (props) => {
 
@@ -29,6 +32,21 @@ console.log("This is the photolist: ", props.photos);
         </defs>
       </svg>
     </button>
+    <div className='photo-list--image--full'>
+      <PhotoListItem  id={ props.photos[0].id }
+    toggleFavorite = { props.toggleFavorite }
+    favorites = { props.favorites }
+    key= { props.photos[0].id }
+    username={ props.photos[0].username }
+    imageSource={ props.photos[0].urls.full }
+    handleFavoriteClick={ props.handleFavoriteClick}
+    setShowModal={ props.setShowModal }/>
+    
+    </div>
+    <div className='photo-details-modal--header'>Similiar Photos
+      <PhotoList className ='photo-details-modal--images' photos={props.photos} toggleFavorite={props.toggleFavorite} favorites={props.favorites} handleFavoriteClick={props.handleFavoriteClick} setShowModal={props.setShowModal}/>
+
+    </div>
   </div>)}
   </>
   )
