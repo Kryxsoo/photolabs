@@ -19,24 +19,7 @@ const App = () => {
   } = useApplicationData();
 
   const {favorites} = state
-
-  // const [topFavorite, setTopFavorite] = useState(false)
-
-  // const handleFavoriteClick = () => {
-  //   console.log("I've been clicked")
-  //   let isFound = false;
-  //   for ( let key in favorites ) {
-  //     if (favorites[key]) {
-  //       isFound = true
-  //       setTopFavorite(true)
-  //     }
-  //   }
-  //   if (!isFound) {
-  //     setTopFavorite(false)
-  //   }
-  // }
   
-
   const showModal = (id) => {
     const photoData = photos.find((photo) => {
       return photo.id === id
