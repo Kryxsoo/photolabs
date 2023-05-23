@@ -6,16 +6,17 @@ import PhotoListItem from './PhotoListItem';
 const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo) => { 
     return  <PhotoListItem
-    id ={photo.id}
-    toggleFavorite = { props.toggleFavorite }
-    favorites = { props.favorites }
-    key= { photo.id }
+    id={ photo.id }
+    toggleFavorite={ props.toggleFavorite }
+    favorites={ props.favorites }
+    key={ photo.id }
     profile={photo.urls.thumb}
     username={ photo.username }
     imageSource={ photo.urls.regular }
     handleFavoriteClick={ props.handleFavoriteClick}
     setShowModal={ props.setShowModal }
-    city={photo.location.city}
+    city={ photo.location.city }
+    showModal={ props.showModal }
     />
   })
     return (

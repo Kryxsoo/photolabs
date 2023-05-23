@@ -10,10 +10,10 @@ export const PhotoDetailsModal = (props) => {
   // const [ showModal, setShowModal] = useState(false)
 
   const showModal = () => {
-    props.setShowModal(false)
+    props.showModal()
   }
 
-console.log("This is the photolist: ", props.photos);
+console.log("This is the photolist: ", props.photoData);
 
   return (
     
@@ -33,15 +33,16 @@ console.log("This is the photolist: ", props.photos);
       </svg>
     </button>
     <div className='photo-list--image--full'>
-      <PhotoListItem  id={ props.photos[0].id }
+      <PhotoListItem
+    id={ props.photoData.id }
     toggleFavorite = { props.toggleFavorite }
     favorites = { props.favorites }
-    key= { props.photos[0].id }
-    profile={props.photos[0].urls.thumb}
-    username={ props.photos[0].username }
-    imageSource={ props.photos[0].urls.full }
+    key={ props.photoData.id }
+    profile={props.photoData.urls.thumb}
+    username={ props.photoData.username }
+    imageSource={ props.photoData.urls.full }
     handleFavoriteClick={ props.handleFavoriteClick}
-    setShowModal={ props.setShowModal } />
+    showModal={ props.showModal } />
     <hr/>
     </div>
 

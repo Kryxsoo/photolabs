@@ -2,14 +2,19 @@ import React, { useCallback, useState } from 'react';
 
 import { FavIcon } from './FavIcon';
 import '../styles/PhotoFavButton.scss';
-import FavBadge from './FavBadge';
 
 function PhotoFavButton(props) {
-  const { isFavorite, setIsFavorite, handleFavoriteClick } = props
+  const { isFavorite, setIsFavorite } = props
   return (
-    <div onClick={() => {setIsFavorite(!isFavorite); handleFavoriteClick()}} className="photo-list--fav-icon">
+    <div onClick={() => {setIsFavorite(!isFavorite); }} className="photo-list--fav-icon">
       <div className="photo-list--fav-icon-svg">
-        {isFavorite ? <FavBadge /> : <FavIcon />}
+      <FavIcon
+          width={20}
+          height={17}
+          outlineWidth={1}
+          fill={isFavorite ? '#C80000' : '#EEEEEE'}
+          stroke={isFavorite ? '#FFFFFF' : '#C80000'}
+        /> 
       </div>
     </div>
   );
