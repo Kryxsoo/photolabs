@@ -4,15 +4,10 @@ import '../styles/TopicListItem.scss'
 const TopicListItem = (props) => {
 
   return (
-  <div className="topic-list--item">
-    <span href={props.label}>{props.label}</span>
+  <div className="topic-list--item" key={props.key}>
+    <span href={props.link}>{props.label}</span>
   </div>
   );
 };
 
-TopicListItem.defaultProps = {
-  id: 1,
-  label: 'Nature',
-  link: 'link placeholder' 
-}
 export default TopicListItem

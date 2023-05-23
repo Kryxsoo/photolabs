@@ -1,10 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.scss';
+import axios from 'axios'
 import HomeRoute from './routes/HomeRoute.jsx';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
-import photos from "./mocks/photos.json"
+// import photos from "./mocks/photos.json"
 import useApplicationData from './hooks/useApplicationData';
  
 
@@ -18,21 +19,33 @@ const App = () => {
     setShowModalState
   } = useApplicationData();
 
+  const [photos, setPhotos] = useState([])
+  const [topics, setTopics] = useState([])
+
+
+  useEffect(() => {
+    axios.get('http://localhost:8001/api/photos')
+    .then(res => setPhotos(res.data))
+  }, []);
+
+
+  useEffect(() => {
+    axios.get('http://localhost:8001/api/topics')
+    .then(res => setTopics(res.data));
+  }, []);
+
   const {favorites} = state
   
   const showModal = (id) => {
     const photoData = photos.find((photo) => {
       return photo.id === id
     })
-    console.log('PhotoData: ', photoData)
     setPhotoSelected(photoData)
-    // setShowModalState()
-    console.log("Ive been called")
   }
 
 return (
   <div className="App">
-    <HomeRoute photos={photos}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal}/>
+    <HomeRoute photos={photos} topics={topics}  toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal}/>
    {state.showModal && <PhotoDetailsModal photos={photos} photoData={state.photoData}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={setShowModalState}/>}
   </div>
 )

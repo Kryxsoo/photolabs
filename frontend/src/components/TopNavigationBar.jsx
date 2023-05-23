@@ -9,7 +9,7 @@ const TopNavigation = (props) => {
     <div className="top-nav-bar">
       <span className="top-nav-bar--logo">PhotoLabs</span>
       <span className="top-nav-bar--topics">
-      <TopicList />
+      <TopicList topics={props.topics}/>
       <FavBadge topFavorite={ props.favorites.length }/>
       </span>
     </div>

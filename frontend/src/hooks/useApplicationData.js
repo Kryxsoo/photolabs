@@ -11,10 +11,8 @@ export const ACTIONS = {
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.TOGGLE_FAVORITE:
-      // console.log("Line 18:", action);
       return {...state, favorites: action.payload}
     case ACTIONS.SELECT_PHOTO:
-      console.log("hello", action.payload.id);
       return {...state, photoData: action.payload, showModal:!state.showModal}
     case ACTIONS.CLOSE_PHOTO:
       return {...state, showModal: !state.showModal}
@@ -27,7 +25,6 @@ function reducer(state, action) {
 
 
 export default function useApplicationData () {
-  // const [state, setState] = useState({favorites:[], photoData:{}, showModal:false })
   const [state, dispatch] = useReducer(reducer, {favorites:[], photoData:{}, showModal:false})
   const toggleFavorite = (id) => {
     const currentFavorites = [...state.favorites]
@@ -35,25 +32,20 @@ export default function useApplicationData () {
       const index = currentFavorites.findIndex((findID) => {
         return findID === id
       })
-      // console.log("index: ", index)
       currentFavorites.splice(index, 1)
     } else {
       currentFavorites.push(id)
     }
-    // console.log("47: ");
     dispatch({type: ACTIONS.TOGGLE_FAVORITE, payload: currentFavorites})
-    // setState({...state, favorites: currentFavorites})
   }
 
   const setPhotoSelected = (photoData) => {
     if (state.showModal) {
       return
     }
-    console.log('CheckingPhoto :', photoData);
     dispatch({type: ACTIONS.SELECT_PHOTO, payload: photoData})
   }
   const setShowModalState = () => {
-    // setState({...state, showModal: !state.showModal})
     dispatch({type: ACTIONS.CLOSE_PHOTO})
   }
   return {

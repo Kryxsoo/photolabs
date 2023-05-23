@@ -13,8 +13,6 @@ export const PhotoDetailsModal = (props) => {
     props.showModal()
   }
 
-console.log("This is the photolist: ", props.photoData);
-
   return (
     
     <>
@@ -38,8 +36,8 @@ console.log("This is the photolist: ", props.photoData);
     toggleFavorite = { props.toggleFavorite }
     favorites = { props.favorites }
     key={ props.photoData.id }
-    profile={props.photoData.urls.thumb}
-    username={ props.photoData.username }
+    profile={props.photoData.user.profile}
+    username={ props.photoData.user.username }
     imageSource={ props.photoData.urls.full }
     handleFavoriteClick={ props.handleFavoriteClick}
     showModal={ props.showModal } />
