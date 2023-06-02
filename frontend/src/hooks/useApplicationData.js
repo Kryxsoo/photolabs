@@ -5,17 +5,19 @@ import axios from "axios";
 
 // Toggles favorite
 export default function useApplicationData () {
-  const [state, dispatch] = useReducer(reducer, {favorites:[], photoData:[], isShowModal:false, topicList:[], selectedPhoto:{}})
+  const [state, dispatch] = useReducer(reducer, {favorites:[], photoData:[], isShowModal:false, topicList:[], selectedPhoto:{}, selectedTopic: null})
 
   useEffect(() => {
-    axios.get('http://localhost:8001/api/photos')
+    const url = state.selectedTopic ? `/api/topics/photos/${state.selectedTopic.id}` : '/api/photos'
+    
+    axios.get(url)
     .then((res) => {
       dispatch({type: ACTIONS.SET_PHOTO_DATA, payload: res.data})
     })
-  }, [])
+  }, [state.selectedTopic])
 
   useEffect(() => {
-    axios.get('http://localhost:8001/api/topics')
+    axios.get('/api/topics')
     .then((res) => {
       dispatch({type: ACTIONS.SET_TOPIC, payload: res.data})
     })
@@ -35,6 +37,10 @@ export default function useApplicationData () {
     dispatch({type: ACTIONS.TOGGLE_FAVORITE, payload: currentFavorites})
   }
 
+  const setSelectedTopic = (selectedTopic) => {
+    dispatch({type: ACTIONS.SET_SELECTED_TOPIC, payload: selectedTopic})
+  }
+
   const setPhotoSelected = (photoData) => {
     console.log(photoData)
     if (state.isShowModal) {
@@ -46,7 +52,7 @@ export default function useApplicationData () {
     dispatch({type: ACTIONS.CLOSE_PHOTO})
   }
   return {
-    state, toggleFavorite, setPhotoSelected, setShowModalState
+    state, toggleFavorite, setPhotoSelected, setShowModalState, setSelectedTopic
   }
 }
 

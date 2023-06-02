@@ -8,7 +8,7 @@ const HomeRoute = (props) => {
 
   return (
   <>
-    <TopNavigationBar topics={props.topics} favorites={props.favorites}/>
+    <TopNavigationBar topics={props.topics} favorites={props.favorites} onTopicClick={props.onTopicClick}/>
     <PhotoList photos={props.photos} toggleFavorite={props.toggleFavorite} favorites={props.favorites} showModal={props.showModal}/>
   </>
 )}

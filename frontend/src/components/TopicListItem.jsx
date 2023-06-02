@@ -5,7 +5,7 @@ import '../styles/TopicListItem.scss'
 const TopicListItem = (props) => {
 
   return (
-  <div className="topic-list--item">
+  <div onClick={props.onClick} className="topic-list--item">
     <span href={props.link}>{props.label}</span>
   </div>
   );

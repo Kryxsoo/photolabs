@@ -11,6 +11,7 @@ const TopicList = (props) => {
     key={ topic.id }
     label={ topic.title }
     link={ topic.slug }
+    onClick={ () => props.onTopicClick(topic) }
     />
   })
 

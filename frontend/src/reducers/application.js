@@ -4,7 +4,8 @@ export const ACTIONS = {
   TOGGLE_FAVORITE: 'TOGGLE_FAVORITE',
   SET_PHOTO_DATA: 'SET_PHOTO_DATA',
   SELECT_PHOTO: 'SELECT_PHOTO',
-  CLOSE_PHOTO: 'CLOSE_PHOTO'
+  CLOSE_PHOTO: 'CLOSE_PHOTO',
+  SET_SELECTED_TOPIC: 'SELECT_SELECTED_TOPIC'
 }
 
 export default function reducer(state, action) {
@@ -19,6 +20,8 @@ export default function reducer(state, action) {
       return {...state, photoData: action.payload}
     case ACTIONS.SET_TOPIC:
       return {...state, topicList: action.payload}
+    case ACTIONS.SET_SELECTED_TOPIC:
+      return {...state, selectedTopic: action.payload}
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`

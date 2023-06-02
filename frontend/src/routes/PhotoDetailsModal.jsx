@@ -30,6 +30,16 @@ console.log(props.photoData)
       </svg>
     </button>
     <div className='photo-list--image--full'>
+      <PhotoListItem
+    id={ props.selectedPhoto.id }
+    toggleFavorite={ props.toggleFavorite }
+    favorites={ props.favorites }
+    profile={ props.selectedPhoto.user.profile }
+    username={ props.selectedPhoto.user.username }
+    imageSource={ props.selectedPhoto.urls.regular }
+    handleFavoriteClick={ props.handleFavoriteClick }
+    city={ props.selectedPhoto.location.city }
+      />
     </div>
 
     <div className='photo-details-modal--header'>Similiar Photos</div>

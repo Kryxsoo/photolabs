@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 import './App.scss';
-import axios from 'axios'
 import HomeRoute from './routes/HomeRoute.jsx';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import useApplicationData from './hooks/useApplicationData';
@@ -16,9 +15,10 @@ const App = () => {
     toggleFavorite,
     setPhotoSelected,
     setShowModalState,
+    setSelectedTopic,
   } = useApplicationData();
 
-  const {favorites, photoData, isShowModal, topicList} = state
+  const {favorites, photoData, isShowModal, topicList, selectedPhoto} = state
   
   const showModal = (id) => {
     const photoData1 = photoData.find((photo) => {
@@ -31,8 +31,8 @@ const App = () => {
 
 return (
   <div className="App">
-    <HomeRoute photos={photoData} topics={topicList}  toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal}/>
-   {isShowModal && <PhotoDetailsModal photos={photoData} photoData={photoData}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={setShowModalState}/>}
+    <HomeRoute photos={photoData} topics={topicList}  toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal} onTopicClick={setSelectedTopic}/>
+   {isShowModal && <PhotoDetailsModal photos={photoData} photoData={photoData} selectedPhoto={selectedPhoto}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={setShowModalState}/>}
   </div>
 )
 }
