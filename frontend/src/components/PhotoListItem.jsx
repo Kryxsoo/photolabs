@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/PhotoListItem.scss';
 import PhotoFavButton from './PhotoFavButton';
 
+// Displays PhotoList, onClick that props modals
 const PhotoListItem = (props) => {
   const isFavorite = props.favorites.includes(props.id)
   const setIsFavorite = () => {

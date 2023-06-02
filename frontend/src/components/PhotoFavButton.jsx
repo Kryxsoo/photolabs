@@ -1,6 +1,8 @@
+import React  from 'react';
 import { FavIcon } from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
+// Favorite Button
 function PhotoFavButton(props) {
   const { isFavorite, setIsFavorite } = props
   return (

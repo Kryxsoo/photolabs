@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/TopicListItem.scss'
 
+// Displays topic items
 const TopicListItem = (props) => {
 
   return (

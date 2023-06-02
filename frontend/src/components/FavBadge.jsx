@@ -3,6 +3,7 @@ import FavIcon from './FavIcon';
 
 import '../styles/FavBadge.scss';
 
+//empty heart
 export const FavBadge = ({ topFavorite }) => {
   return (
     <div className='fav-badge'>

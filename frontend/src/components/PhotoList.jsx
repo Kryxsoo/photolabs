@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/PhotoList.scss';
 import PhotoListItem from './PhotoListItem';
 
-
+// maps through PhotoListItem
 const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo) => { 
     return  <PhotoListItem

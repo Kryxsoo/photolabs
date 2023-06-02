@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Red filled heart
 export function FavIcon({
   width, height, fill, outlineWidth, stroke, displayAlert
 }) {

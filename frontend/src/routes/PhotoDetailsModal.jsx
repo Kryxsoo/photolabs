@@ -5,6 +5,7 @@ import PhotoListItem from '../components/PhotoListItem';
 import '../styles/PhotoDetailsModal.scss'
 import '../styles/PhotoListItem.scss'
 
+// Props the Modal, containing photos and similiar photos
 export const PhotoDetailsModal = (props) => {
 
   const showModal = () => {

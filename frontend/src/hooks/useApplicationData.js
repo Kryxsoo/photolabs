@@ -7,7 +7,6 @@ export const ACTIONS = {
   CLOSE_PHOTO: 'CLOSE_PHOTO'
 }
 
-
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.TOGGLE_FAVORITE:
@@ -23,7 +22,7 @@ function reducer(state, action) {
   }
 }
 
-
+// Toggles favorite
 export default function useApplicationData () {
   const [state, dispatch] = useReducer(reducer, {favorites:[], photoData:{}, showModal:false})
   const toggleFavorite = (id) => {

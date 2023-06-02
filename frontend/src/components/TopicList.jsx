@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/TopicList.scss';
 import TopicListItem from './TopicListItem';
 
+// maps through topics
 const TopicList = (props) => {
 
   const mappedTopics = props.topics.map((topic) => {
