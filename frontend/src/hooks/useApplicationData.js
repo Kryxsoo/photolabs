@@ -13,6 +13,13 @@ export default function useApplicationData () {
       dispatch({type: ACTIONS.SET_PHOTO_DATA, payload: res.data})
     })
   }, [])
+
+  useEffect(() => {
+    axios.get('http://localhost:8001/api/topics')
+    .then((res) => {
+      dispatch({type: ACTIONS.SET_TOPIC, payload: res.data})
+    })
+  }, [])
   
 
   const toggleFavorite = (id) => {

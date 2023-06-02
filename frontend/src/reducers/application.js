@@ -17,6 +17,8 @@ export default function reducer(state, action) {
       return {...state, isShowModal: !state.isShowModal}
     case ACTIONS.SET_PHOTO_DATA:
       return {...state, photoData: action.payload}
+    case ACTIONS.SET_TOPIC:
+      return {...state, topicList: action.payload}
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
