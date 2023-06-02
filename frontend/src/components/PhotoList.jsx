@@ -14,7 +14,6 @@ const PhotoList = (props) => {
     username={ photo.user.username }
     imageSource={ photo.urls.regular }
     handleFavoriteClick={ props.handleFavoriteClick}
-    setShowModal={ props.setShowModal }
     city={ photo.location.city }
     showModal={ props.showModal }
     />
