@@ -15,37 +15,34 @@ const App = () => {
     state,
     toggleFavorite,
     setPhotoSelected,
-    setShowModalState
+    setShowModalState,
   } = useApplicationData();
 
-  const [photos, setPhotos] = useState([])
   const [topics, setTopics] = useState([])
 
-
-  useEffect(() => {
-    axios.get('http://localhost:8001/api/photos')
-    .then(res => setPhotos(res.data))
-  }, []);
+  
 
 
   useEffect(() => {
     axios.get('http://localhost:8001/api/topics')
     .then(res => setTopics(res.data));
   }, []);
-
-  const {favorites} = state
+console.log(state);
+  const {favorites, photoData, isShowModal} = state
   
   const showModal = (id) => {
-    const photoData = photos.find((photo) => {
+    const photoData1 = photoData.find((photo) => {
       return photo.id === id
     })
-    setPhotoSelected(photoData)
+    console.log(photoData1);
+    setPhotoSelected(photoData1)
   }
+
 
 return (
   <div className="App">
-    <HomeRoute photos={photos} topics={topics}  toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal}/>
-   {state.showModal && <PhotoDetailsModal photos={photos} photoData={state.photoData}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={setShowModalState}/>}
+    <HomeRoute photos={photoData} topics={topics}  toggleFavorite={toggleFavorite} favorites={favorites} showModal={showModal}/>
+   {isShowModal && <PhotoDetailsModal photos={photoData} photoData={photoData}   toggleFavorite={toggleFavorite} favorites={favorites} showModal={setShowModalState}/>}
   </div>
 )
 }

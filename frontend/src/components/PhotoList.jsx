@@ -13,7 +13,7 @@ const PhotoList = (props) => {
     profile={photo.user.profile}
     username={ photo.user.username }
     imageSource={ photo.urls.regular }
-    handleFavoriteClick={ props.handleFavoriteClick}
+    handleFavoriteClick={ props.handleFavoriteClick }
     city={ photo.location.city }
     showModal={ props.showModal }
     />

@@ -12,9 +12,11 @@ export default function reducer(state, action) {
     case ACTIONS.TOGGLE_FAVORITE:
       return {...state, favorites: action.payload}
     case ACTIONS.SELECT_PHOTO:
-      return {...state, photoData: action.payload, showModal:!state.showModal}
+      return {...state, selectedPhoto: action.payload, isShowModal:!state.isShowModal}
     case ACTIONS.CLOSE_PHOTO:
-      return {...state, showModal: !state.showModal}
+      return {...state, isShowModal: !state.isShowModal}
+    case ACTIONS.SET_PHOTO_DATA:
+      return {...state, photoData: action.payload}
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`

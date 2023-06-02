@@ -11,7 +11,7 @@ export const PhotoDetailsModal = (props) => {
   const showModal = () => {
     props.showModal()
   }
-
+console.log(props.photoData)
   return (
     
     <>
@@ -30,17 +30,6 @@ export const PhotoDetailsModal = (props) => {
       </svg>
     </button>
     <div className='photo-list--image--full'>
-      <PhotoListItem
-    id={ props.photoData.id }
-    toggleFavorite = { props.toggleFavorite }
-    favorites = { props.favorites }
-    key={ props.photoData.id }
-    profile={props.photoData.user.profile}
-    username={ props.photoData.user.username }
-    imageSource={ props.photoData.urls.full }
-    handleFavoriteClick={ props.handleFavoriteClick}
-    showModal={ props.showModal } />
-    <hr/>
     </div>
 
     <div className='photo-details-modal--header'>Similiar Photos</div>
