@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 
 import './App.scss';
 import HomeRoute from './routes/HomeRoute.jsx';
@@ -24,7 +23,7 @@ const App = () => {
     const photoData1 = photoData.find((photo) => {
       return photo.id === id
     })
-    console.log(photoData1);
+  
     setPhotoSelected(photoData1)
   }
 

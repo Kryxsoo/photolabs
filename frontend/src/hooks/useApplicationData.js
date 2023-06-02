@@ -42,7 +42,6 @@ export default function useApplicationData () {
   }
 
   const setPhotoSelected = (photoData) => {
-    console.log(photoData)
     if (state.isShowModal) {
       return
     }
