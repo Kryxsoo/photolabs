@@ -5,7 +5,6 @@ import './App.scss';
 import axios from 'axios'
 import HomeRoute from './routes/HomeRoute.jsx';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
-// import photos from "./mocks/photos.json"
 import useApplicationData from './hooks/useApplicationData';
  
 

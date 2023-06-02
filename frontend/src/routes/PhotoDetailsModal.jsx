@@ -7,8 +7,6 @@ import '../styles/PhotoListItem.scss'
 
 export const PhotoDetailsModal = (props) => {
 
-  // const [ showModal, setShowModal] = useState(false)
-
   const showModal = () => {
     props.showModal()
   }
